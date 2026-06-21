@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enroll - Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+background:#f4f6f9;
+}
+
+.form-container{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.form-box{
+background:white;
+padding:30px;
+width:350px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+animation:fadeIn 0.6s ease-in-out;
+}
+
+.form-box h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.form-box input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+outline:none;
+transition:0.3s;
+}
+
+.form-box input:focus{
+border-color:black;
+box-shadow:0 0 5px gray;
+}
+
+.form-box button{
+width:100%;
+padding:10px;
+background:black;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.form-box button:hover{
+background:#333;
+transform:scale(1.03);
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* TOP TITLE BAR */
+.top-bar{
+text-align:center;
+padding:15px;
+background:#111;
+color:white;
+font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="top-bar">
+Learning Hub - Course Enrollment
+</div>
+
+<div class="form-container">
+
+  <div class="form-box">
+    <h2>Enroll Now</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="number" placeholder="Phone Number">
+
+    <input type="text" id="course" readonly>
+
+    <button onclick="sendWhatsApp()">Submit</button>
+  </div>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("course").value = params.get("course");
+
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let number = document.getElementById("number").value;
+  let course = document.getElementById("course").value;
+
+  let msg = `New Enrollment:%0AName: ${name}%0AEmail: ${email}%0APhone: ${number}%0ACourse: ${course}`;
+
+  window.open("https://wa.me/923232974451?text=" + msg, "_blank");
+}
+</script>
+
+</body>
+</html>

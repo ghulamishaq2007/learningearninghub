@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Class - Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+<h2>Online Class Room</h2>
+</header>
+
+<section class="class-container">
+
+<div class="course-card">
+    <h3>Graphic Design</h3>
+
+    <div class="btn-area">
+        <button onclick="joinClass('graphic')">Join Class</button>
+        <span class="plus-btn" onclick="openOwner()">+</span>
+    </div>
+</div>
+
+<div class="course-card">
+    <h3>Website Design</h3>
+
+    <div class="btn-area">
+        <button onclick="joinClass('website')">Join Class</button>
+        <span class="plus-btn" onclick="openOwner()">+</span>
+    </div>
+</div>
+
+<div class="course-card">
+    <h3>Shopify Design</h3>
+
+    <div class="btn-area">
+        <button onclick="joinClass('shopify')">Join Class</button>
+        <span class="plus-btn" onclick="openOwner()">+</span>
+    </div>
+</div>
+
+</section>
+
+<!-- <div class="join-section">
+  <button onclick="joinClass()">Join Class</button>
+</div> -->
+
+<!-- PLUS BUTTON (OWNER ONLY) -->
+<!-- <div class="plus" onclick="openOwner()">+</div> -->
+
+<!-- OWNER LOGIN -->
+<div id="ownerBox" class="popup">
+  <div class="popup-box">
+    <h3>Owner Password</h3>
+    <input type="password" id="ownerPass">
+    <button onclick="checkOwner()">Submit</button>
+    <p id="ownerMsg"></p>
+  </div>
+</div>
+
+<!-- LINK INPUT -->
+<div id="linkBox" class="popup">
+  <div class="popup-box">
+    <h3>Enter Class Link</h3>
+    <input type="text" id="classLink" placeholder="Zoom / Google Meet Link">
+    <button onclick="saveLink()">Save</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

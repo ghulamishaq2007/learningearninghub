@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class Access</title>
+
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial;
+background:#f4f4f4;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+text-align:center;
+width:300px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:10px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Online Class Access</h2>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="checkPassword()">Enter</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+function checkPassword(){
+
+let pass = document.getElementById("password").value;
+
+if(pass === "2468"){
+window.location.href = "online-class.html";
+}
+else{
+document.getElementById("msg").innerHTML =
+"Wrong Password ❌";
+}
+
+}
+</script>
+
+</body>
+</html>
